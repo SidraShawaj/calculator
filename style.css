@@ -1,0 +1,68 @@
+@font-face {
+  font-family: "Garamond";
+  src: url(fonts/GaramondRegular.ttf) format("truetype");
+}
+@font-face {
+  font-family: "Digital-7";
+  src: url(fonts/digital-7.ttf) format("truetype");
+}
+
+* {
+  font-family: "Garamond", sans-serif;
+  box-sizing: border-box;
+  font-weight: bold;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  background-color: #5f7989;
+}
+
+.calculator {
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  height: 100vh;
+  grid-template-columns: repeat(4, 100px);
+  grid-template-rows: repeat(6, 100px);
+}
+
+.calculator > button {
+  cursor: pointer;
+  font-size: 2rem;
+  background: #3b3c37;
+  color: rgb(211, 204, 204);
+  border: 1px solid #403f3f;
+  opacity: 90%;
+}
+
+.calculator .symbol {
+  color: #d8512b;
+  font-weight: bold;
+}
+
+.calculator .equality {
+  background-color: #d8512b;
+  color: rgb(211, 204, 204);
+  font-weight: bold;
+}
+
+.calculator > button:hover {
+  opacity: 100%;
+}
+
+.results {
+  grid-column: 1 / -1;
+  font-family: "Digital-7";
+  font-size: 2.2rem;
+  color: rgb(211, 204, 204);
+  background-color: #2d384a;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-around;
+  flex-direction: column;
+  padding: 10px;
+  word-wrap: break-word;
+  word-break: break-all;
+}
