@@ -58,30 +58,25 @@ const operate = (op, firstOperand, secondOperand) => {
     case "÷":
       result = divide(firstOp, secondOp);
       break;
-    default:
-      break;
   }
   currNum = result;
   pervNum = "";
   operator = undefined;
 };
 
-const clear = () => {
-  currNum = "";
-  pervNum = "";
-  operator = undefined;
-};
-
-const deletion = () => {
-  currNum = currNum.toString().slice(0, -1);
-};
-
 const inputNumber = (number) => {
-  if (number === "." && currNum.includes(".")) return;
+  if (
+    (number === "." && currNum.includes(".")) ||
+    (number === "0" && currNum.includes("0"))
+  )
+    return;
   currNum = currNum.toString() + number.toString();
 };
 
 const inputOperator = (op) => {
+  if (operator !== undefined) {
+    operator = op;
+  }
   if (currNum === "") return;
   if (pervNum !== "") {
     operate(op, currNum, pervNum);
@@ -97,6 +92,16 @@ const negation = () => {
 
 const percent = () => {
   currNum = (currNum / 100).toString();
+};
+
+const clear = () => {
+  currNum = "";
+  pervNum = "";
+  operator = undefined;
+};
+
+const deletion = () => {
+  currNum = currNum.toString().slice(0, -1);
 };
 
 const updateScreen = () => {
