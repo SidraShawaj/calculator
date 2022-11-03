@@ -6,6 +6,7 @@ const operatorBtn = document.querySelectorAll(".operator");
 const numberBtn = document.querySelectorAll(".number");
 const equalsBtn = document.querySelector(".equality");
 const negategeBtn = document.querySelector(".negate");
+const btn = document.querySelectorAll(".btn");
 const audio = new Audio(
   "https://s3-us-west-2.amazonaws.com/s.cdpn.io/242518/click.mp3"
 );
@@ -118,12 +119,16 @@ numberBtn.forEach((button) => {
   });
 });
 
-document.addEventListener("mousedown", () => {
-  audio.play();
+btn.forEach((button) => {
+  button.addEventListener("mousedown", () => {
+    audio.play();
+  });
 });
 
-document.addEventListener("mouseup", () => {
-  audio1.play();
+btn.forEach((button) => {
+  button.addEventListener("mouseup", () => {
+    audio1.play();
+  });
 });
 
 operatorBtn.forEach((button) => {
